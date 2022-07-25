@@ -1,7 +1,7 @@
 #!/bin/bash
 BASEDIR=$(pwd)
 indir=STACKS_data/process_radtags/
-mkdir STACKS_data/ustacks
+mkdir ${BASEDIR}/STACKS_data/ustacks
 outdir=STACKS_data/ustacks/US_M
 # leaf samples
 for M in $(seq 2 2 8) ; do

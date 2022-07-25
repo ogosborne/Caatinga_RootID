@@ -1,5 +1,6 @@
 #!/bin/bash
 BASEDIR=$(pwd)
+mkdir ${BASEDIR}/STACKS_data
 mkdir ${BASEDIR}/STACKS_data/process_radtags
 indir=seq_data/
 outdir=STACKS_data/process_radtags/
