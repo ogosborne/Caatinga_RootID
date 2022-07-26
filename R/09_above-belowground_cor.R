@@ -113,7 +113,7 @@ get_ag_bg_pcor <- function(ag.metrics, bg.metrics, z, metadata){
       dat <- metadata[, c("species",a, b, z)]
       dat <- dat[complete.cases(dat),]
       # get corr
-      my.cor <- ppcor::spcor.test(x = dat[, a], y = dat[, b], z = dat[, z], method = "spearman")
+      my.cor <- ppcor::pcor.test(x = dat[, a], y = dat[, b], z = dat[, z], method = "spearman")
       # add corr to matrix
       cor.mat[b, a] <- my.cor$estimate
       # add P value to matrix
@@ -127,8 +127,9 @@ get_ag_bg_pcor <- function(ag.metrics, bg.metrics, z, metadata){
 # get corrlations
 ag.metrics = c("h_tree", "canopy.LS", "canopy.area", "canopy.vol")
 bg.metrics = c("root.LS", "N.root")
+bg.metrics.3 = c("root.LS.3", "N.root.3")
 ag_bg_pcor <- get_ag_bg_pcor(ag.metrics = ag.metrics, bg.metrics = bg.metrics, z = "N.ind", metadata = metadata)
-ag_bg_pcor.3 <- get_ag_bg_pcor(ag.metrics = ag.metrics, bg.metrics = bg.metrics, z = "N.ind", metadata = metadata)
+ag_bg_pcor.3 <- get_ag_bg_pcor(ag.metrics = ag.metrics, bg.metrics = bg.metrics.3, z = "N.ind", metadata = metadata)
 # print correlations to file
 sink("results/ag_bg_correlations/partial.cor.txt")
 cat("Min match depth = 1", "\n\n")
