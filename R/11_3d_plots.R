@@ -31,7 +31,7 @@ open3d()
 # manually resize rgl window
 mfrow3d(2,2,sharedMouse = T)
 # Commiphora_leptophloeos sp
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Commiphora_leptophloeos", 
@@ -54,7 +54,7 @@ next3d()
 my.cols <- RColorBrewer::brewer.pal(2,"Set3")
 my.cols <- my.cols[1:2]
 names(my.cols) <- ind.list$Commiphora_leptophloeos
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Commiphora_leptophloeos", 
@@ -74,7 +74,7 @@ plot.roots.3d(matches = best.matches,
               draw.legend = FALSE)
 next3d()
 # Cenostigma_microphyllum sp
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Cenostigma_microphyllum", 
@@ -97,7 +97,7 @@ next3d()
 my.cols <- RColorBrewer::brewer.pal(length(ind.list$Cenostigma_microphyllum), "Set3")
 my.cols <- my.cols[1:2]
 names(my.cols) <- ind.list$Cenostigma_microphyllum
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Cenostigma_microphyllum", 
@@ -125,7 +125,7 @@ rgl::rgl.close()
 
 # Calliandra_depauperata
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Calliandra_depauperata",
@@ -147,7 +147,7 @@ rgl::rgl.close()
 
 # Cereus_albicaulis
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Cereus_albicaulis",
@@ -170,7 +170,7 @@ rgl::rgl.close()
 
 # Chloroleucon_foliolosum
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Chloroleucon_foliolosum",
@@ -194,7 +194,7 @@ rgl::rgl.close()
 # species
 # Cnidoscolus_quercifolius
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Cnidoscolus_quercifolius",
@@ -221,7 +221,7 @@ rgl::rgl.close()
 # species
 # Commiphora_leptophloeos
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Commiphora_leptophloeos",
@@ -243,7 +243,7 @@ rgl::rgl.close()
 # species
 # Croton_echioides
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Croton_echioides",
@@ -267,7 +267,7 @@ rgl::rgl.close()
 # species
 # Ditaxis_desertorum
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Ditaxis_desertorum",
@@ -291,7 +291,7 @@ rgl::rgl.close()
 # species
 # Handroanthus_spongiosus
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Handroanthus_spongiosus",
@@ -315,7 +315,7 @@ rgl::rgl.close()
 # species
 # Jatropha_mollissima
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Jatropha_mollissima",
@@ -339,7 +339,7 @@ rgl::rgl.close()
 # species
 # Manihot_carthagenensis
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Manihot_carthagenensis",
@@ -363,7 +363,7 @@ rgl::rgl.close()
 # species
 # Mimosa_arenosa
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Mimosa_arenosa",
@@ -388,7 +388,7 @@ rgl::rgl.close()
 # species
 # Neoglaziovia_variegata
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Neoglaziovia_variegata",
@@ -412,7 +412,7 @@ rgl::rgl.close()
 # species
 # Pseudobombax_simplicifolium
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Pseudobombax_simplicifolium",
@@ -438,7 +438,7 @@ rgl::rgl.close()
 # species
 # Sapium_glandulosum
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Sapium_glandulosum",
@@ -462,7 +462,7 @@ rgl::rgl.close()
 # species
 # Schinopsis_brasiliensis
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Schinopsis_brasiliensis",
@@ -486,7 +486,7 @@ rgl::rgl.close()
 # species
 # Senna_macranthera
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Senna_macranthera",
@@ -510,7 +510,7 @@ rgl::rgl.close()
 # species
 # Tacinga_inamoena
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Tacinga_inamoena",
@@ -534,7 +534,7 @@ rgl::rgl.close()
 # species
 # Varronia_leucocephala
 rgl::open3d()
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Varronia_leucocephala",
@@ -561,7 +561,7 @@ rgl::rgl.close()
   my.cols <- my.cols[1:2]
   names(my.cols) <- ind.list$Cenostigma_microphyllum
   rgl::open3d()
-  plot.roots.3d(matches = best.matches, 
+  plot_roots_3d(matches = best.matches, 
                 ind.list = ind.list, 
                 root.pos = root.pos, 
                 taxa = "Cenostigma_microphyllum",
@@ -586,7 +586,7 @@ open3d()
 my.cols <- RColorBrewer::brewer.pal(length(ind.list$Cnidoscolus_quercifolius),"Set3")
 my.cols <- my.cols[1:length(ind.list$Cnidoscolus_quercifolius)]
 names(my.cols) <- ind.list$Cnidoscolus_quercifolius
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Cnidoscolus_quercifolius", 
@@ -612,7 +612,7 @@ open3d()
 my.cols <- RColorBrewer::brewer.pal(length(ind.list$Croton_echioides), "Set3")
 my.cols <- my.cols[1:length(ind.list$Croton_echioides)]
 names(my.cols) <- ind.list$Croton_echioides
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Croton_echioides", 
@@ -639,7 +639,7 @@ open3d()
 my.cols <- RColorBrewer::brewer.pal(length(ind.list$Handroanthus_spongiosus),"Set3")
 my.cols <- my.cols[1:length(ind.list$Handroanthus_spongiosus)]
 names(my.cols) <- ind.list$Handroanthus_spongiosus
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Handroanthus_spongiosus", 
@@ -668,7 +668,7 @@ my.cols <- my.cols[1:length(ind.list$Jatropha_mollissima)]
 names(my.cols) <- ind.list$Jatropha_mollissima
 # remove those with no roots detected
 my.cols <- my.cols[c("L_1","L_10","L_19","L_23","L_41")]
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Jatropha_mollissima", 
@@ -695,7 +695,7 @@ open3d()
 my.cols <- RColorBrewer::brewer.pal(length(ind.list$Pseudobombax_simplicifolium),"Set3")
 my.cols <- my.cols[1:length(ind.list$Pseudobombax_simplicifolium)]
 names(my.cols) <- ind.list$Pseudobombax_simplicifolium
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Pseudobombax_simplicifolium", 
@@ -722,7 +722,7 @@ open3d()
 my.cols <- RColorBrewer::brewer.pal(length(ind.list$Sapium_glandulosum),"Set3")
 my.cols <- my.cols[1:length(ind.list$Sapium_glandulosum)]
 names(my.cols) <- ind.list$Sapium_glandulosum
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Sapium_glandulosum", 
@@ -749,7 +749,7 @@ open3d()
 my.cols <- RColorBrewer::brewer.pal(length(ind.list$Schinopsis_brasiliensis),"Set3")
 my.cols <- my.cols[1:length(ind.list$Schinopsis_brasiliensis)]
 names(my.cols) <- ind.list$Schinopsis_brasiliensis
-plot.roots.3d(matches = best.matches, 
+plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Schinopsis_brasiliensis", 
