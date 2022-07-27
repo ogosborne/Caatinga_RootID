@@ -130,7 +130,11 @@ bg.metrics = c("root.LS", "N.root")
 bg.metrics.3 = c("root.LS.3", "N.root.3")
 ag_bg_pcor <- get_ag_bg_pcor(ag.metrics = ag.metrics, bg.metrics = bg.metrics, z = "N.ind", metadata = metadata)
 ag_bg_pcor.3 <- get_ag_bg_pcor(ag.metrics = ag.metrics, bg.metrics = bg.metrics.3, z = "N.ind", metadata = metadata)
-# print correlations to file
+# print correlations to files
+# as table
+out.tab <- data.frame(ag = rep(colnames(ag_bg_pcor$rho), each = 2), bg = rep(rownames(ag_bg_pcor$rho),4), rho.1 = as.vector(ag_bg_pcor$rho), p.1 = as.vector(ag_bg_pcor$p), rho.3 = as.vector(ag_bg_pcor.3$rho), p.3 = as.vector(ag_bg_pcor.3$p))
+write.csv(out.tab, file = "results/ag_bg_correlations/ppcor.tab.csv", quote = F)
+# as text
 sink("results/ag_bg_correlations/partial.cor.txt")
 cat("Min match depth = 1", "\n\n")
 for(n in names(ag_bg_pcor$cor)){
