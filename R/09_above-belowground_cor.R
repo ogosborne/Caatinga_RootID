@@ -125,14 +125,14 @@ get_ag_bg_pcor <- function(ag.metrics, bg.metrics, z, metadata){
   list(rho = cor.mat, p = p.mat, cor = cor.tests, data = reduced.dat)
 }
 # get corrlations
-ag.metrics = c("h_tree", "canopy.LS", "canopy.area", "canopy.vol")
+ag.metrics = c("h_tree", "canopy.LS", "canopy.area", "canopy.vol", "h_crown")
 bg.metrics = c("root.LS", "N.root")
 bg.metrics.3 = c("root.LS.3", "N.root.3")
 ag_bg_pcor <- get_ag_bg_pcor(ag.metrics = ag.metrics, bg.metrics = bg.metrics, z = "N.ind", metadata = metadata)
 ag_bg_pcor.3 <- get_ag_bg_pcor(ag.metrics = ag.metrics, bg.metrics = bg.metrics.3, z = "N.ind", metadata = metadata)
 # print correlations to files
 # as table
-out.tab <- data.frame(ag = rep(colnames(ag_bg_pcor$rho), each = 2), bg = rep(rownames(ag_bg_pcor$rho),4), rho.1 = as.vector(ag_bg_pcor$rho), p.1 = as.vector(ag_bg_pcor$p), rho.3 = as.vector(ag_bg_pcor.3$rho), p.3 = as.vector(ag_bg_pcor.3$p))
+out.tab <- data.frame(ag = rep(colnames(ag_bg_pcor$rho), each = 2), bg = rep(rownames(ag_bg_pcor$rho),5), rho.1 = as.vector(ag_bg_pcor$rho), p.1 = as.vector(ag_bg_pcor$p), rho.3 = as.vector(ag_bg_pcor.3$rho), p.3 = as.vector(ag_bg_pcor.3$p))
 write.csv(out.tab, file = "results/ag_bg_correlations/ppcor.tab.csv", quote = F)
 # as text
 sink("results/ag_bg_correlations/partial.cor.txt")
@@ -150,19 +150,21 @@ sink()
 # plot and output correlations
 # nice names
 nice.names <- list(h_tree = 'Tree height (m)',
+                   h_crown = 'Crown base height (m)',
                    canopy.LS = 'Canopy radius (m)',
                    canopy.area = expression('Canopy area (m'^2~')'),
                    canopy.vol = expression('Canopy volume (m'^3~')'),
                    root.LS = 'Root radius (m)',
-                   N.root = 'N root matches')
+                   root.LS.3 = 'Root radius (m)',
+                   N.root = 'N root matches',
+                   N.root.3 = 'N root matches')
 # plot function
-plot_ag.bg <- function(ag.metrics, bg.metrics, ag_bg_pcor, nice.names, prefix){
+plot_ag.bg <- function(ag.metrics, bg.metrics, ag_bg_pcor, nice.names, prefix, cols){
   for(b in bg.metrics){
     for(a in ag.metrics){
       pdf(paste(prefix, paste(a,b,sep="_vs_"), "pdf", sep = "."),paper = "a4r")
       par(mfrow=c(2,2),mar=c(5.1, 5.1, 4.1, 2.1))
-      my.cols = viridis_pal(option = "C")(length(unique(ag_bg_pcor$data[[paste(a, b, sep = "_vs_")]][, "species"])))
-      names(my.cols) <- sort(unique(ag_bg_pcor$data[[paste(a, b, sep = "_vs_")]][, "species"]))
+      my.cols <- cols[which(names(cols) %in% ag_bg_pcor$data[[paste(a, b, sep = "_vs_")]][, "species"])]
       plot(ag_bg_pcor$data[[paste(a, b, sep = "_vs_")]][, a], ag_bg_pcor$data[[paste(a, b, sep = "_vs_")]][,b], xlab = nice.names[[a]], ylab = nice.names[[b]], pch = 21, cex = 1.2, bg = my.cols[ag_bg_pcor$data[[paste(a, b, sep = "_vs_")]][, "species"]], cex.lab = 1.3)
       abline( lm(ag_bg_pcor$data[[paste(a, b, sep = "_vs_")]][,b] ~ ag_bg_pcor$data[[paste(a, b, sep = "_vs_")]][, a]))
       par(mar=c(0,0,0,2.1))
@@ -172,7 +174,10 @@ plot_ag.bg <- function(ag.metrics, bg.metrics, ag_bg_pcor, nice.names, prefix){
     }
   }
 }
+# get cols
+my.cols = viridis_pal(option = "C")(length(unique(ag_bg_pcor$data$h_tree_vs_N.root$species)))
+names(my.cols) <- sort(unique(unique(ag_bg_pcor$data$h_tree_vs_N.root$species)))
 #plot
-plot_ag.bg(ag.metrics = ag.metrics, bg.metrics = bg.metrics, ag_bg_pcor = ag_bg_pcor, nice.names = nice.names, prefix = "./results/ag_bg_correlations/cor.md1")
-plot_ag.bg(ag.metrics = ag.metrics, bg.metrics = bg.metrics, ag_bg_pcor = ag_bg_pcor.3, nice.names = nice.names, prefix = "./results/ag_bg_correlations/cor.md3")
+plot_ag.bg(ag.metrics = ag.metrics, bg.metrics = bg.metrics, ag_bg_pcor = ag_bg_pcor, nice.names = nice.names, prefix = "./results/ag_bg_correlations/cor.md1", cols = my.cols)
+plot_ag.bg(ag.metrics = ag.metrics, bg.metrics = bg.metrics.3, ag_bg_pcor = ag_bg_pcor.3, nice.names = nice.names, prefix = "./results/ag_bg_correlations/cor.md3", cols = my.cols)
 
