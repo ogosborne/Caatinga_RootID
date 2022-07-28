@@ -41,18 +41,19 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.particles = FALSE, 
               alpha.scale.cubes = TRUE,
-              col=c(Commiphora_leptophloeos = "forestgreen"), 
+              col=c(Commiphora_leptophloeos = "grey"),
+              tree.trunk.col = "grey",
               draw.axes = TRUE,
               which.axes = c(TRUE, TRUE, FALSE),
               which.axis.sides = c("-", "+", "--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 next3d()
 # Commiphora_leptophloeos ind
-my.cols <- RColorBrewer::brewer.pal(2,"Set3")
-my.cols <- my.cols[1:2]
+my.cols <- RColorBrewer::brewer.pal(2,"RdYlBu")
+my.cols <- my.cols[c(1,3)]
 names(my.cols) <- ind.list$Commiphora_leptophloeos
 plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
@@ -66,11 +67,12 @@ plot_roots_3d(matches = best.matches,
               alpha.scale.cubes = FALSE,
               abundance.scale.type = "max",
               col = my.cols, 
+              tree.trunk.col = "white",
               draw.axes = TRUE,
               which.axes = c(TRUE, TRUE, FALSE),
               which.axis.sides = c("-", "+", "--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""),  
               draw.legend = FALSE)
 next3d()
 # Cenostigma_microphyllum sp
@@ -84,18 +86,19 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.particles = FALSE, 
               alpha.scale.cubes = TRUE,
-              col=c(Cenostigma_microphyllum = "forestgreen"), 
+              col=c(Cenostigma_microphyllum = "grey"),
+              tree.trunk.col = "grey",
               draw.axes = TRUE,
               which.axes = c(TRUE, TRUE, FALSE),
               which.axis.sides = c("-", "+", "--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 next3d()
 # Cenostigma_microphyllum ind
-my.cols <- RColorBrewer::brewer.pal(length(ind.list$Cenostigma_microphyllum), "Set3")
-my.cols <- my.cols[1:2]
+my.cols <- RColorBrewer::brewer.pal(length(ind.list$Cenostigma_microphyllum), "RdYlBu")
+my.cols <- my.cols[c(1,3)]
 names(my.cols) <- ind.list$Cenostigma_microphyllum
 plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
@@ -108,12 +111,13 @@ plot_roots_3d(matches = best.matches,
               draw.particles = TRUE, 
               alpha.scale.cubes = FALSE,
               abundance.scale.type = "max",
-              col = my.cols, 
+              col = my.cols,
+              tree.trunk.col = "white",
               draw.axes = TRUE,
               which.axes = c(TRUE, TRUE, FALSE),
               which.axis.sides = c("-","+","--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 # manually adjust zoom and viewing angle 
@@ -129,7 +133,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Calliandra_depauperata",
-              col = c(Calliandra_depauperata = "forestgreen"),
+              col = c(Calliandra_depauperata = "grey"),
+              tree.trunk.col = "grey",
               tax.type = "sp", 
               draw.legend = FALSE,
               draw.particles = FALSE, 
@@ -138,8 +143,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               which.axes = c(TRUE, TRUE, FALSE)
 )
 rgl::rgl.snapshot("./results/3d_plots/Calliandra_depauperata.png")
@@ -151,7 +156,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Cereus_albicaulis",
-              col = c(Cereus_albicaulis = "forestgreen"),
+              col = c(Cereus_albicaulis = "grey"),
+              tree.trunk.col = "grey",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -161,8 +167,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E") 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               
 )
 rgl::rgl.snapshot("./results/3d_plots/Cereus_albicaulis.png")
@@ -174,7 +180,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Chloroleucon_foliolosum",
-              col = c(Chloroleucon_foliolosum = "forestgreen"),
+              col = c(Chloroleucon_foliolosum = "grey"),
+              tree.trunk.col = "grey",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -184,8 +191,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Chloroleucon_foliolosum.png")
@@ -198,7 +205,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Cnidoscolus_quercifolius",
-              col = c(Cnidoscolus_quercifolius = "forestgreen"),
+              col = c(Cnidoscolus_quercifolius = "grey"),
+              tree.trunk.col = "grey",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -208,8 +216,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"), 
               which.axis.sides = c("+", "-", "++"),
               which.root.grid = c("x+", "y-", "z-")
@@ -219,35 +227,14 @@ rgl::rgl.snapshot("./results/3d_plots/Cnidoscolus_quercifolius.png")
 rgl::rgl.close()
 
 # species
-# Commiphora_leptophloeos
-rgl::open3d()
-plot_roots_3d(matches = best.matches, 
-              ind.list = ind.list, 
-              root.pos = root.pos, 
-              taxa = "Commiphora_leptophloeos",
-              col = c(Commiphora_leptophloeos = "forestgreen"),
-              tax.type = "sp", 
-              draw.legend = FALSE, 
-              max.n.particles = 500, 
-              draw.trees = TRUE, 
-              tree.dat = tree.dat, 
-              draw.axes = TRUE, 
-              draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
-              root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
-)
-rgl::rgl.snapshot("./results/3d_plots/Commiphora_leptophloeos.png")
-rgl::rgl.close()
-
-# species
 # Croton_echioides
 rgl::open3d()
 plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Croton_echioides",
-              col = c(Croton_echioides = "forestgreen"),
+              col = c(Croton_echioides = "grey"),
+              tree.trunk.col = "grey",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -257,8 +244,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Croton_echioides.png")
@@ -271,7 +258,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Ditaxis_desertorum",
-              col = c(Ditaxis_desertorum = "forestgreen"),
+              col = c(Ditaxis_desertorum = "gray"),
+              tree.trunk.col = "grey",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -281,8 +269,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Ditaxis_desertorum.png")
@@ -295,7 +283,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Handroanthus_spongiosus",
-              col = c(Handroanthus_spongiosus = "forestgreen"),
+              col = c(Handroanthus_spongiosus = "gray"),
+              tree.trunk.col = "gray",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -305,8 +294,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Handroanthus_spongiosus.png")
@@ -319,7 +308,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Jatropha_mollissima",
-              col = c(Jatropha_mollissima = "forestgreen"),
+              col = c(Jatropha_mollissima = "gray"),
+              tree.trunk.col = "gray",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -329,8 +319,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Jatropha_mollissima.png")
@@ -343,7 +333,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Manihot_carthagenensis",
-              col = c(Manihot_carthagenensis = "forestgreen"),
+              col = c(Manihot_carthagenensis = "gray"),
+              tree.trunk.col = "gray",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -353,8 +344,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Manihot_carthagenensis.png")
@@ -367,7 +358,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Mimosa_arenosa",
-              col = c(Mimosa_arenosa="forestgreen"),
+              col = c(Mimosa_arenosa="gray"),
+              tree.trunk.col = "gray",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -377,8 +369,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Mimosa_arenosa.png")
@@ -392,7 +384,7 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Neoglaziovia_variegata",
-              col = c(Neoglaziovia_variegata = "forestgreen"),
+              col = c(Neoglaziovia_variegata = "gray"),
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -402,8 +394,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Neoglaziovia_variegata.png")
@@ -416,7 +408,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Pseudobombax_simplicifolium",
-              col = c(Pseudobombax_simplicifolium = "forestgreen"),
+              col = c(Pseudobombax_simplicifolium = "gray"),
+              tree.trunk.col = "gray",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -426,8 +419,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Pseudobombax_simplicifolium.png")
@@ -442,7 +435,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Sapium_glandulosum",
-              col = c(Sapium_glandulosum = "forestgreen"),
+              col = c(Sapium_glandulosum = "gray"),
+              tree.trunk.col = "gray",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -452,8 +446,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Sapium_glandulosum.png")
@@ -466,7 +460,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Schinopsis_brasiliensis",
-              col = c(Schinopsis_brasiliensis = "forestgreen"),
+              col = c(Schinopsis_brasiliensis = "gray"),
+              tree.trunk.col = "gray",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -476,8 +471,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Schinopsis_brasiliensis.png")
@@ -490,7 +485,8 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Senna_macranthera",
-              col = c(Senna_macranthera = "forestgreen"),
+              col = c(Senna_macranthera = "gray"),
+              tree.trunk.col = "gray",
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -500,8 +496,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Senna_macranthera.png")
@@ -514,7 +510,7 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Tacinga_inamoena",
-              col = c(Tacinga_inamoena = "forestgreen"),
+              col = c(Tacinga_inamoena = "gray"),
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -524,8 +520,8 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Tacinga_inamoena.png")
@@ -538,7 +534,7 @@ plot_roots_3d(matches = best.matches,
               ind.list = ind.list, 
               root.pos = root.pos, 
               taxa = "Varronia_leucocephala",
-              col = c(Varronia_leucocephala = "forestgreen"),
+              col = c(Varronia_leucocephala = "gray"),
               tax.type = "sp", 
               draw.legend = FALSE, 
               draw.particles = FALSE, 
@@ -548,43 +544,38 @@ plot_roots_3d(matches = best.matches,
               tree.dat = tree.dat, 
               draw.axes = TRUE, 
               draw.root.grid = TRUE,
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""), 
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
 )
 rgl::rgl.snapshot("./results/3d_plots/Varronia_leucocephala.png")
 rgl::rgl.close()
 
   # individuals
-  # Cenostigma_microphyllum
-  my.cols <- brewer.pal(2, "Set3")
-  my.cols <- my.cols[1:2]
-  names(my.cols) <- ind.list$Cenostigma_microphyllum
-  rgl::open3d()
+
+  my.cols <- RColorBrewer::brewer.pal(2,"RdYlBu")
+  my.cols <- my.cols[c(1,3)]
+  names(my.cols) <- ind.list$Commiphora_leptophloeos
   plot_roots_3d(matches = best.matches, 
                 ind.list = ind.list, 
                 root.pos = root.pos, 
-                taxa = "Cenostigma_microphyllum",
-                col = my.cols,
+                taxa = "Commiphora_leptophloeos", 
                 tax.type = "sp.ind", 
-                draw.legend = FALSE, 
-                max.n.particles = 500, 
+                draw.root.grid = TRUE, 
                 draw.trees = TRUE, 
                 tree.dat = tree.dat, 
-                draw.axes = TRUE, 
-                draw.root.grid = TRUE,
-                root.x.names = 1:5, 
-                root.y.names = c("A", "B", "C", "D", "E"), 
-                root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm")
-  )
-  rgl::rgl.snapshot("./results/3d_plots/Cenostigma_microphyllum.inds.png")
-  rgl::rgl.close()
-
+                draw.particles = TRUE, 
+                alpha.scale.cubes = FALSE,
+                abundance.scale.type = "max",
+                col = my.cols, 
+                tree.trunk.col = "white")
+  
+  
 # individuals
 
 open3d()
-my.cols <- RColorBrewer::brewer.pal(length(ind.list$Cnidoscolus_quercifolius),"Set3")
-my.cols <- my.cols[1:length(ind.list$Cnidoscolus_quercifolius)]
+my.cols <- RColorBrewer::brewer.pal(length(ind.list$Cnidoscolus_quercifolius),"RdYlBu")
+my.cols <-  my.cols[c(1,3)]
 names(my.cols) <- ind.list$Cnidoscolus_quercifolius
 plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
@@ -599,18 +590,19 @@ plot_roots_3d(matches = best.matches,
               alpha.scale.cubes = FALSE,
               abundance.scale.type = "max",
               col = my.cols, 
+              tree.trunk.col = "white",
               draw.axes = TRUE,
               which.axis.sides = c("+", "-", "++"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""),  
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 rgl::rgl.snapshot("./results/3d_plots/Cnidoscolus_quercifolius.ind.png")
 rgl::rgl.close()
 #Croton_echioides
 open3d()
-my.cols <- RColorBrewer::brewer.pal(length(ind.list$Croton_echioides), "Set3")
-my.cols <- my.cols[1:length(ind.list$Croton_echioides)]
+my.cols <- RColorBrewer::brewer.pal(length(ind.list$Croton_echioides), "RdYlBu")
+my.cols <- my.cols[c(1,3)]
 names(my.cols) <- ind.list$Croton_echioides
 plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
@@ -625,10 +617,11 @@ plot_roots_3d(matches = best.matches,
               alpha.scale.cubes = FALSE,
               abundance.scale.type = "max",
               col = my.cols, 
+              tree.trunk.col = "white",
               draw.axes = TRUE,
               which.axis.sides = c("-", "+", "--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""),
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 rgl::rgl.snapshot("./results/3d_plots/Croton_echioides.ind.png")
@@ -637,7 +630,6 @@ rgl::rgl.close()
 # Handroanthus_spongiosus
 open3d()
 my.cols <- RColorBrewer::brewer.pal(length(ind.list$Handroanthus_spongiosus),"Set3")
-my.cols <- my.cols[1:length(ind.list$Handroanthus_spongiosus)]
 names(my.cols) <- ind.list$Handroanthus_spongiosus
 plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
@@ -652,10 +644,11 @@ plot_roots_3d(matches = best.matches,
               alpha.scale.cubes = FALSE,
               abundance.scale.type = "max",
               col = my.cols, 
+              tree.trunk.col = "white",
               draw.axes = TRUE,
               which.axis.sides = c("-", "+", "--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""),
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 rgl::rgl.snapshot("./results/3d_plots/Handroanthus_spongiosus.ind.png")
@@ -663,11 +656,10 @@ rgl::rgl.close()
 
 # Jatropha_mollissima
 open3d()
-my.cols <- RColorBrewer::brewer.pal(length(ind.list$Jatropha_mollissima),"Set3")
-my.cols <- my.cols[1:length(ind.list$Jatropha_mollissima)]
-names(my.cols) <- ind.list$Jatropha_mollissima
-# remove those with no roots detected
-my.cols <- my.cols[c("L_1","L_10","L_19","L_23","L_41")]
+my.cols <- RColorBrewer::brewer.pal(5,"RdYlBu")
+# removed inds with no roots detected
+names(my.cols) <- c("L_1","L_10","L_19","L_23","L_41")
+
 plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
               root.pos = root.pos, 
@@ -681,10 +673,11 @@ plot_roots_3d(matches = best.matches,
               alpha.scale.cubes = F,
               abundance.scale.type = "max",
               col = my.cols, 
+              tree.trunk.col = "white",
               draw.axes = TRUE,
               which.axis.sides = c("-", "+", "--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""),
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 rgl::rgl.snapshot("./results/3d_plots/Jatropha_mollissima.ind.png")
@@ -692,8 +685,8 @@ rgl::rgl.close()
 
 # Pseudobombax_simplicifolium
 open3d()
-my.cols <- RColorBrewer::brewer.pal(length(ind.list$Pseudobombax_simplicifolium),"Set3")
-my.cols <- my.cols[1:length(ind.list$Pseudobombax_simplicifolium)]
+my.cols <- RColorBrewer::brewer.pal(length(ind.list$Pseudobombax_simplicifolium),"RdYlBu")
+my.cols <- my.cols[c(1,3)]
 names(my.cols) <- ind.list$Pseudobombax_simplicifolium
 plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
@@ -708,10 +701,11 @@ plot_roots_3d(matches = best.matches,
               alpha.scale.cubes = FALSE,
               abundance.scale.type = "max",
               col = my.cols, 
+              tree.trunk.col = "white",
               draw.axes = TRUE,
               which.axis.sides = c("-", "+", "--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""),
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 rgl::rgl.snapshot("./results/3d_plots/Pseudobombax_simplicifolium.ind.png")
@@ -734,11 +728,12 @@ plot_roots_3d(matches = best.matches,
               which.axes = c(TRUE, TRUE, FALSE),
               alpha.scale.cubes = FALSE,
               abundance.scale.type = "max",
-              col = my.cols, 
+              col = my.cols,
+              tree.trunk.col = "white",
               draw.axes = TRUE,
               which.axis.sides = c("-", "+", "--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""),
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 rgl::rgl.snapshot("./results/3d_plots/Sapium_glandulosum.ind.png")
@@ -746,8 +741,8 @@ rgl::rgl.close()
 
 # Schinopsis_brasiliensis
 open3d()
-my.cols <- RColorBrewer::brewer.pal(length(ind.list$Schinopsis_brasiliensis),"Set3")
-my.cols <- my.cols[1:length(ind.list$Schinopsis_brasiliensis)]
+my.cols <- RColorBrewer::brewer.pal(length(ind.list$Schinopsis_brasiliensis),"RdYlBu")
+my.cols <- my.cols[c(1,3)]
 names(my.cols) <- ind.list$Schinopsis_brasiliensis
 plot_roots_3d(matches = best.matches, 
               ind.list = ind.list, 
@@ -762,10 +757,11 @@ plot_roots_3d(matches = best.matches,
               alpha.scale.cubes = FALSE,
               abundance.scale.type = "max",
               col = my.cols, 
+              tree.trunk.col = "white",
               draw.axes = TRUE,
               which.axis.sides = c("-", "+", "--"),
-              root.x.names = 1:5, 
-              root.y.names = c("A", "B", "C", "D", "E"), 
+              root.x.names = c("","","X","",""), 
+              root.y.names = c("","","Y","",""),
               root.z.names = c("0 - 5 cm", "5 - 10 cm", "15 - 20 cm", "45 - 50 cm"),
               draw.legend = FALSE)
 rgl::rgl.snapshot("./results/3d_plots/Schinopsis_brasiliensis.ind.png")
