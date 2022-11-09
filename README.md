@@ -14,6 +14,8 @@ To reproduce the analysis, sequence data should first be downloaded from the Eur
 * [gtools](https://cran.r-project.org/package=gtools) (version used: 3.9.2)
 * [RColorBrewer](https://cran.r-project.org/package=RColorBrewer) (version used: 1.1-2)
 * [rgl](https://cran.r-project.org/package=rgl) (version used: 0.109.6)
+* [wesanderson](https://cran.r-project.org/package=wesanderson) (version used: 0.3.6)
+
 
 The scripts can then be run in order as follows:
 
@@ -57,7 +59,6 @@ Rscript ./R/06_Miscellaneous_stats.R
 Rscript ./R/07_tree-root_position_comparison.R
 # Make dendrogram based on shared markers
 Rscript ./R/08_pres-abs_dendrogram.R
-# compare tree and root positions??
 ```
 
 #### Analyse root distribution patterns
@@ -68,6 +69,22 @@ Rscript ./R/09_above-belowground_cor.R
 Rscript ./R/10_depth_niches.R
 ```
 
-#### Visualise 3D root distributions.
+#### Visualise 3D root distributions
 
-The final script ```11_3d_plots.R``` should be run line-by-line in the R GUI or Rstudio so the plots can be manually adjusted (turned/zoomed etc) in the RGL device.
+This script ```11_3d_plots.R``` should be run line-by-line in the R GUI or Rstudio so the plots can be manually adjusted (turned/zoomed etc) in the RGL device.
+
+#### Simulated data analysis
+```bash
+# simulate populations
+sh ./shell/sim_pop.sh
+# simulate reads
+sh ./shell/sim_reads.sh
+# subsample reads and run ustacks. n.b. this is an example script, to replicate them exactly, use the random seeds in table S7 of the paper rather than generating them fresh
+sh ./shell/samp_reads_ustacks.sh
+# run cstacks
+sh ./shell/sim_cstacks.sh
+# run sstackss
+sh ./shell/sim_sstacks.sh
+# run RootID and plot results
+Rscript ./R/12_sim_data.R
+```
